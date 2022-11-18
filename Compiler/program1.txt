@@ -1,4 +1,1 @@
-lda 30
-ldb 50
-add
-sta 125
+halt

@@ -17,7 +17,8 @@ assembly_instruction = {
     'nop' : '0 ',
     'suba': '10 ',
     'sub' : '12 ',
-    'sta' : '16 '
+    'sta' : '16 ',
+    'halt': 'ff '
 }
 
 # Input Source code and output file names
