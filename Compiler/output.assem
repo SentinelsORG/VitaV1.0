@@ -1,0 +1,17 @@
+lda 12
+sta 65532
+lda 13
+ldb 16
+add
+ldb 983
+add
+ldb 982
+sub
+ldb 282
+sub
+ldb 298
+add
+ldb 82
+sub
+sta 65528
+halt

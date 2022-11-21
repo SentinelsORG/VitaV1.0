@@ -2,6 +2,9 @@ from sys import argv
 
 # Defining functions
 def little_endian(data):
+    if data < 0:
+        data = 2**32 + data
+        
     data = hex(data)[2:].zfill(8)
     div = []
     for i in range(4):
@@ -56,7 +59,7 @@ program = program[:-1]
 
 
 # write to the output
-with open(program_name+".bodimproc", 'w') as programfile:
+with open(program_name, 'w') as programfile:
     programfile.write(program)
 
 print("[+] Compiling completed.")
