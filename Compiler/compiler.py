@@ -1,13 +1,13 @@
 from sys import argv
 
 # Defining functions
-def little_endian(data):
+def little_endian(data, len = 8):
     if data < 0:
         data = 2**32 + data
         
-    data = hex(data)[2:].zfill(8)
+    data = hex(data)[2:].zfill(len)
     div = []
-    for i in range(4):
+    for i in range(int(len/2)):
         div.append(data[2*i:2*i+2])
     data = " ".join(div[::-1])
     return " " + data + " "
@@ -21,7 +21,9 @@ assembly_instruction = {
     'suba': '10 ',
     'sub' : '12 ',
     'sta' : '16 ',
-    'halt': 'ff '
+    'halt': 'ff ',
+    'mv'  : '31 ',
+    'memlda': '35 '
 }
 
 # Input Source code and output file names
@@ -39,11 +41,17 @@ prog = prog.split()
 
 # build the machine code
 temp_str = ""
+mv_cmd = False
 for item in prog:
     if item in assembly_instruction:
         temp_str += assembly_instruction[item]
+        if item == 'mv': mv_cmd = True
+        else: mv_cmd = False
     else:
-        temp_str += little_endian(int(item))
+        if not mv_cmd:
+            temp_str += little_endian(int(item))
+        else:
+            temp_str += little_endian(int(item), 2)
 
 temp_str = temp_str.split()
 clocks = len(temp_str)

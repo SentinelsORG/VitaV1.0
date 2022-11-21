@@ -1,0 +1,10 @@
+lda 50
+sta 300
+lda 60
+sta 304
+memlda 300
+mv 6 4
+memlda 304
+add
+sta 308
+halt
