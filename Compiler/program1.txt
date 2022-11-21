@@ -1,9 +1,0 @@
-lda 56
-ldb 78
-sub
-sta 200
-lda 350
-ldb 300
-add
-sta 204
-halt
