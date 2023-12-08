@@ -6,16 +6,18 @@ Our project aims to develop a hybrid RISC-V processor design using Verilog. It c
 
 ## Features
 
-- RISC-V architecture implementation
+- RISC-V architecture implementation with Standard Instruction Set Architecture (ISA)
 - Hybrid design (CISC) for improved performance
 - Verilog-based development
 
 ## Implemented Modules
 
-- **CPU Module**: Implements the RISC-V processor functionality.
-- **Memory Controller**: Manages data flow between CPU and memory.
+- **Program Counter**: Manages the address of the current instruction being executed.
+- **Instruction Memory**: Stores the instructions to be executed by the processor.
+- **Controller**: Coordinates the control signals within the processor.
+- **ALU (Arithmetic Logic Unit)**: Performs arithmetic and logic operations.
+- **ALU Controller**: Generates control signals for the ALU operations.
+- **Cache Data Memory**: Serves as a cache memory for data storage.
+- **Register Files**: Stores and manages register values used by the processor.
 
-## Hardware Description
-
-![Processor Design](link_to_processor_design_image.png)
 
